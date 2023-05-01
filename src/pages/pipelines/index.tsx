@@ -18,7 +18,7 @@ export default function Pipelines() {
     <>
       <div className='content'>
         {data.map((pipeline) => (
-          <div className='row'>
+          <div className='row' key={pipeline.id}>
             <Link href='/pipeline/[id]' as={`/pipeline/${pipeline.id}`}>
               {pipeline.name}
             </Link>
