@@ -29,3 +29,7 @@ export type Link = {
   to: string;
   from: string;
 };
+
+export type ResponseError = {
+  message: string;
+};

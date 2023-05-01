@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -13,18 +14,16 @@ const Footer = () => {
           <div className='row'>
             <div className='col'>
               <ul className='no-bullets'>
-                <a href='!#'>
-                  <li className='footer__list-item'>Home</li>
-                </a>
-                <ul></ul>
+                <Link className='footer__list-item' href='/'>
+                  Home
+                </Link>
               </ul>
             </div>
             <div className='col'>
               <ul className='no-bullets'>
-                <a href='!#'>
-                  <li className='footer__list-item'>Company Information</li>
-                </a>
-                <ul></ul>
+                <Link className='footer__list-item' href=''>
+                  Documentation
+                </Link>
               </ul>
             </div>
           </div>

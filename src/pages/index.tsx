@@ -5,15 +5,15 @@ import Footer from '@/components/layout/footer';
 const Home = () => {
   return (
     <>
-      <div className='hero fullscreen bg-green-300'>
-        <div className='hero-body'>
+      <div className='bg-green-200 u-flex u-flex-column h-screen'>
+        <div className='u-flex-grow-1 mt-10'>
           <div className='content'>
-            <div className='frame px-3 py-3 content max-w-40p bg-white'>
+            <div className='frame p-3 content bg-white'>
               <div className='frame__body'>
                 <div className='u-flex u-center'>
                   <img
                     src='https://raw.githubusercontent.com/Spiderpig86/Cirrus/master/img/CirrusLogo.png'
-                    className='max-w-30p'
+                    className='max-w-20p'
                   />
                 </div>
                 <h2>Pipeline Designer</h2>
@@ -31,17 +31,17 @@ const Home = () => {
                     <button className='btn--lg'>Pipelines</button>
                   </Link>
                   <Link href=''>
-                    <button className='btn--lg'>Docs</button>
+                    <button className='btn--lg'>Documentation</button>
                   </Link>
                 </div>
-                <div className='space'></div>
               </div>
             </div>
           </div>
         </div>
+        <div className='u-flex-grow-0'>
+          <Footer />
+        </div>
       </div>
-
-      <Footer />
     </>
   );
 };
