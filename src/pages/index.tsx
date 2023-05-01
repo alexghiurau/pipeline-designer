@@ -12,15 +12,9 @@ const Home = () => {
             <div className='frame p-3 content bg-white'>
               <div className='frame__body'>
                 <div className='u-flex u-center'>
-                  <Image
-                    src='https://raw.githubusercontent.com/Spiderpig86/Cirrus/master/img/CirrusLogo.png'
-                    width={300}
-                    alt='logo'
-                  />
+                  <h2>Pipeline Designer</h2>
                 </div>
-                <h2>Pipeline Designer</h2>
                 <p>View and edit pipelines right in the browser.</p>
-
                 <p>Features include:</p>
                 <ul>
                   <li>Viewing pipelines</li>
