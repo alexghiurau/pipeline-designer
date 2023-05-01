@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/layout/footer';
 
 const Home = () => {
@@ -11,9 +12,10 @@ const Home = () => {
             <div className='frame p-3 content bg-white'>
               <div className='frame__body'>
                 <div className='u-flex u-center'>
-                  <img
+                  <Image
                     src='https://raw.githubusercontent.com/Spiderpig86/Cirrus/master/img/CirrusLogo.png'
-                    className='max-w-20p'
+                    width={300}
+                    alt='logo'
                   />
                 </div>
                 <h2>Pipeline Designer</h2>
