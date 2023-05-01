@@ -16,19 +16,17 @@ export default function Pipelines() {
 
   return (
     <>
-      <div className='content'>
-        {data.map((pipeline) => (
-          <div className='row' key={pipeline.id}>
-            <Link href='/pipeline/[id]' as={`/pipeline/${pipeline.id}`}>
-              {pipeline.name}
-            </Link>
-          </div>
-        ))}
+      {data.map((pipeline) => (
+        <div key={pipeline.id}>
+          <Link href='/pipeline/[id]' as={`/pipeline/${pipeline.id}`}>
+            {pipeline.name}
+          </Link>
+        </div>
+      ))}
 
-        <Link href='/'>
-          <button className='btn'>Home</button>
-        </Link>
-      </div>
+      <Link href='/'>
+        <button>Home</button>
+      </Link>
     </>
   );
 }
