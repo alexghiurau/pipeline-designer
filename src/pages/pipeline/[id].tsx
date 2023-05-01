@@ -18,14 +18,11 @@ export default function PipelinePage() {
 
   return (
     <>
-      <div className='content'>
-        <div>{data.name}</div>
-        <div>{JSON.stringify(data)}</div>
-
-        <Link href='/pipelines'>
-          <button className='btn'>Pipelines</button>
-        </Link>
-      </div>
+      <div>{data.name}</div>
+      <div>{JSON.stringify(data)}</div>
+      <Link href='/pipelines'>
+        <button>Pipelines</button>
+      </Link>
     </>
   );
 }
