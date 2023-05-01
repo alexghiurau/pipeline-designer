@@ -1,5 +1,4 @@
 import { Pipeline } from '@/interfaces';
-import { NextApiRequest, NextApiResponse } from 'next';
 
 export const pipelines: Pipeline[] = [
   {
@@ -53,7 +52,3 @@ export const pipelines: Pipeline[] = [
     ],
   },
 ];
-
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  res.status(200).json(pipelines);
-}

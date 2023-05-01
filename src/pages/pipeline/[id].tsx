@@ -8,7 +8,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 export default function PipelinePage() {
   const { query } = useRouter();
   const { data, error, isLoading } = useSwr<Pipeline>(
-    query.id ? `/api/pipeline/${query.id}` : null,
+    query.id ? `/api/pipelines/${query.id}` : null,
     fetcher
   );
 
