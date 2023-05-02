@@ -21,7 +21,7 @@ export default function Pipelines() {
         {data.map((pipeline) => (
           <List.Item key={pipeline.id}>
             <Text>
-              <Link href={`/pipeline/${encodeURIComponent(pipeline.id)}`}>
+              <Link href={`/pipelines/${encodeURIComponent(pipeline.id)}`}>
                 {pipeline.name}
               </Link>
             </Text>
