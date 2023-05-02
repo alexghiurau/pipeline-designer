@@ -1,6 +1,7 @@
 import type { Pipeline } from '../../interfaces';
 import useSwr from 'swr';
 import Link from 'next/link';
+import { List, Text } from '@mantine/core';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -16,14 +17,21 @@ export default function Pipelines() {
 
   return (
     <>
-      {data.map((pipeline) => (
-        <div key={pipeline.id}>
-          <Link href={`/pipeline/${encodeURIComponent(pipeline.id)}`}>
-            {pipeline.name}
-          </Link>
-        </div>
-      ))}
-      <Link href='/'>Home</Link>
+      <List>
+        {data.map((pipeline) => (
+          <List.Item key={pipeline.id}>
+            <Text>
+              <Link href={`/pipeline/${encodeURIComponent(pipeline.id)}`}>
+                {pipeline.name}
+              </Link>
+            </Text>
+          </List.Item>
+        ))}
+      </List>
+
+      <Text>
+        <Link href='/'>Home</Link>
+      </Text>
     </>
   );
 }
