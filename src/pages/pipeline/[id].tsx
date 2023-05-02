@@ -1,7 +1,6 @@
 import type { Pipeline } from '../../interfaces';
 import { useRouter } from 'next/router';
-import NextLink from 'next/link';
-import { Link } from '@chakra-ui/react';
+import Link from 'next/link';
 import useSwr from 'swr';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -21,9 +20,7 @@ export default function PipelinePage() {
     <>
       <div>{data.name}</div>
       <div>{JSON.stringify(data)}</div>
-      <Link as={NextLink} href='/pipelines'>
-        Pipelines
-      </Link>
+      <Link href='/pipelines'>Pipelines</Link>
     </>
   );
 }
