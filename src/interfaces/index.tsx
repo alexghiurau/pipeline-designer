@@ -7,20 +7,22 @@ export type Pipeline = {
 
 export type Element = (Origin | Filter | Destination) & {
   id: string;
-  type: 'origin' | 'filter' | 'destination';
   name: string;
 };
 
 export type Origin = {
+  type: 'origin';
   path: string;
 };
 
 export type Filter = {
+  type: 'filter';
   searchTerm: string;
   contains: boolean;
 };
 
 export type Destination = {
+  type: 'destination';
   destinationType: 'file' | 'https';
   path: string;
 };
