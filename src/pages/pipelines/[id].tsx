@@ -1,8 +1,7 @@
 import type { Pipeline } from '../../interfaces';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import useSwr from 'swr';
-import { Text, Title } from '@mantine/core';
+import { Container, Text, Title } from '@mantine/core';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -18,12 +17,9 @@ export default function PipelinePage() {
   if (!data) return null;
 
   return (
-    <>
+    <Container>
       <Title order={1}>{data.name}</Title>
       <Text ff={'monospace'}>{JSON.stringify(data)}</Text>
-      <Text>
-        <Link href='/pipelines'>Pipelines</Link>
-      </Text>
-    </>
+    </Container>
   );
 }
