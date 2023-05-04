@@ -2,6 +2,8 @@ import type { Pipeline } from '../../interfaces';
 import { useRouter } from 'next/router';
 import useSwr from 'swr';
 import { Container, Text, Title } from '@mantine/core';
+import Loading from '@/components/loading';
+import LoadPipelineError from '@/components/error/loadPipelineError';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -12,9 +14,9 @@ export default function PipelinePage() {
     fetcher
   );
 
-  if (error) return <div>Failed to load pipeline</div>;
-  if (isLoading) return <div>Loading...</div>;
-  if (!data) return null;
+  if (error) return <LoadPipelineError />;
+  if (isLoading) return <Loading />;
+  if (!data) return <LoadPipelineError />;
 
   return (
     <Container>
