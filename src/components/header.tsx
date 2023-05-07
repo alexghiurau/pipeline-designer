@@ -14,21 +14,28 @@ const Header = () => {
         <Link
           href='/'
           as={NextLink}
-          color='whiteAlpha.800'
+          color='whiteAlpha.900'
           fontSize='2xl'
           textAlign='left'>
           Pipeline Designer
         </Link>
         <Box display='flex'>
-          <Link href='/pipelines' as={NextLink} color='whiteAlpha.800'>
+          <Link href='/pipelines' as={NextLink} color='whiteAlpha.900'>
             Pipelines
           </Link>
           <Link
             href='/documentation'
             as={NextLink}
             ml='1rem'
-            color='whiteAlpha.800'>
+            color='whiteAlpha.900'>
             Documentation
+          </Link>
+          <Link
+            href='https://github.com/alexghiurau/pipeline-designer/'
+            as={NextLink}
+            ml='1rem'
+            color='whiteAlpha.900'>
+            GitHub
           </Link>
         </Box>
       </Box>

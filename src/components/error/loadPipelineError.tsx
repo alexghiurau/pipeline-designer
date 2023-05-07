@@ -1,5 +1,3 @@
-const LoadPipelineError = () => {
-  return <div>Failed to load pipeline</div>;
-};
+const LoadPipelineError = () => <div>Failed to load pipeline</div>;
 
 export default LoadPipelineError;
