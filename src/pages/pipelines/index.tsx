@@ -1,7 +1,8 @@
-import type { Pipeline } from '../../interfaces';
 import useSwr from 'swr';
 import Link from 'next/link';
-import { List, Text } from '@mantine/core';
+import Loading from '@/components/loading';
+import LoadPipelinesError from '@/components/error/loadPipelinesError';
+import type { Pipeline } from '@/interfaces';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -11,27 +12,21 @@ export default function Pipelines() {
     fetcher
   );
 
-  if (error) return <div>Failed to load pipelines</div>;
-  if (isLoading) return <div>Loading...</div>;
-  if (!data) return null;
+  if (error) return <LoadPipelinesError />;
+  if (isLoading) return <Loading />;
+  if (!data) return <LoadPipelinesError />;
 
   return (
     <>
-      <List>
+      <ul>
         {data.map((pipeline) => (
-          <List.Item key={pipeline.id}>
-            <Text>
-              <Link href={`/pipelines/${encodeURIComponent(pipeline.id)}`}>
-                {pipeline.name}
-              </Link>
-            </Text>
-          </List.Item>
+          <li key={pipeline.id}>
+            <Link href={`/pipelines/${encodeURIComponent(pipeline.id)}`}>
+              {pipeline.name}
+            </Link>
+          </li>
         ))}
-      </List>
-
-      <Text>
-        <Link href='/'>Home</Link>
-      </Text>
+      </ul>
     </>
   );
 }

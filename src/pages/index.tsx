@@ -1,28 +1,14 @@
-import React from 'react';
-import Link from 'next/link';
-
-import { List, Space, Text, Title } from '@mantine/core';
-
 const Home = () => {
   return (
     <>
-      <Title>Pipeline Designer</Title>
-      <Text>View and edit pipelines right in the browser.</Text>
+      <h1>Pipeline Designer</h1>
+      <p>View and edit pipelines right in the browser.</p>
 
-      <Text c={'blue'}>Features include:</Text>
-      <List>
-        <List.Item>Viewing pipelines</List.Item>
-        <List.Item>... and more to come!</List.Item>
-      </List>
-
-      <Space h={'sm'}></Space>
-
-      <Text>
-        <Link href='/pipelines'>Pipelines</Link>
-      </Text>
-      <Text>
-        <Link href=''>Docs</Link>
-      </Text>
+      <p>Features include:</p>
+      <ul>
+        <li>Viewing pipelines</li>
+        <li>... and more to come!</li>
+      </ul>
     </>
   );
 };

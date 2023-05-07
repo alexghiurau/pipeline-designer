@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { pipelines } from '../../../../data/pipelines';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import type { Pipeline, ResponseError } from '@/interfaces';
 
 export default function pipelineHandler(

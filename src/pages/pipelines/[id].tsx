@@ -1,8 +1,8 @@
-import type { Pipeline } from '../../interfaces';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import useSwr from 'swr';
-import { Text, Title } from '@mantine/core';
+import Loading from '@/components/loading';
+import LoadPipelineError from '@/components/error/loadPipelineError';
+import type { Pipeline } from '@/interfaces';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -13,17 +13,14 @@ export default function PipelinePage() {
     fetcher
   );
 
-  if (error) return <div>Failed to load pipeline</div>;
-  if (isLoading) return <div>Loading...</div>;
-  if (!data) return null;
+  if (error) return <LoadPipelineError />;
+  if (isLoading) return <Loading />;
+  if (!data) return <LoadPipelineError />;
 
   return (
     <>
-      <Title order={1}>{data.name}</Title>
-      <Text ff={'monospace'}>{JSON.stringify(data)}</Text>
-      <Text>
-        <Link href='/pipelines'>Pipelines</Link>
-      </Text>
+      <p>{data.name}</p>
+      <p>{JSON.stringify(data)}</p>
     </>
   );
 }
