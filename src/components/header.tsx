@@ -1,23 +1,15 @@
-import { Group, Flex, Anchor } from '@mantine/core';
 import Link from 'next/link';
 
 const Header = () => {
   return (
-    <Flex h={60} bg={'red'} align={'center'} justify={'space-between'}>
-      <Anchor component={Link} ml={'2rem'} href={'/'}>
-        Pipeline Designer
-      </Anchor>
+    <>
+      <Link href={'/'}>Pipeline Designer</Link>
 
-      <Group mr={'2rem'}>
-        <Anchor component={Link} href={'/pipelines'}>
-          Pipelines
-        </Anchor>
-
-        <Anchor component={Link} href={''}>
-          Docs
-        </Anchor>
-      </Group>
-    </Flex>
+      <div>
+        <Link href={'/pipelines'}>Pipelines</Link>
+        <Link href={'/documentation'}>Docs</Link>
+      </div>
+    </>
   );
 };
 
