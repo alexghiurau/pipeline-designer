@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Layout from '@/components/layout';
+import { ChakraProvider } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -12,9 +13,11 @@ export default function App({ Component, pageProps }: AppProps) {
           content='minimum-scale=1, initial-scale=1, width=device-width'
         />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ChakraProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ChakraProvider>
     </>
   );
 }
