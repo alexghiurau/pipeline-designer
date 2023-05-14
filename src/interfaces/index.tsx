@@ -5,28 +5,30 @@ export type Pipeline = {
   links: Link[];
 };
 
-export type Element = {
+export type BaseElement = {
   id: string;
   name: string;
   type: ElementType;
 };
 
-export type Origin = Element & {
+export type Origin = BaseElement & {
   type: 'origin';
   path: string;
 };
 
-export type Filter = Element & {
+export type Filter = BaseElement & {
   type: 'filter';
   searchTerm: string;
   contains: boolean;
 };
 
-export type Destination = Element & {
+export type Destination = BaseElement & {
   type: 'destination';
   destinationType: DestinationType;
   path: string;
 };
+
+type Element = Origin | Filter | Destination;
 
 type ElementType = 'origin' | 'filter' | 'destination';
 
