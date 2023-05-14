@@ -1,21 +1,19 @@
 import useSwr from 'swr';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import Loading from '@/components/loading';
 import LoadPipelinesError from '@/components/error/loadPipelinesError';
 import type { Pipeline } from '@/interfaces';
 import {
-  Container,
   Table,
-  TableCaption,
   TableContainer,
   Tbody,
   Td,
-  Tfoot,
   Th,
   Thead,
   Tr,
-  Text,
+  Link,
 } from '@chakra-ui/react';
+import { getDestination, getOrigin } from '@/lib/pipeline';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -37,38 +35,33 @@ export default function Pipelines() {
             <Th>Status</Th>
             <Th>Name</Th>
             <Th>Origin Type</Th>
+            <Th>Origin Path</Th>
             <Th>Destination Type</Th>
+            <Th>Destination Path</Th>
           </Tr>
         </Thead>
         <Tbody>
-          {data.map((pipeline) => (
-            <Tr key={pipeline.id}>
-              <Td>✅</Td>
-              <Td>
-                <Link href={`/pipelines/${encodeURIComponent(pipeline.id)}`}>
-                  {pipeline.name}
-                </Link>
-              </Td>
-              <Td>
-                <Text>
-                  {
-                    pipeline.elements.find(
-                      (element) => element.type === 'origin'
-                    )?.type
-                  }
-                </Text>
-              </Td>
-              <Td>
-                <Text>
-                  {
-                    pipeline.elements.find(
-                      (element) => element.type === 'destination'
-                    )?.type
-                  }
-                </Text>
-              </Td>
-            </Tr>
-          ))}
+          {data.map((pipeline) => {
+            const origin = getOrigin(pipeline);
+            const destination = getDestination(pipeline);
+            return (
+              <Tr key={pipeline.id}>
+                <Td>✅</Td>
+                <Td>
+                  <Link
+                    as={NextLink}
+                    href={`/pipelines/${encodeURIComponent(pipeline.id)}`}
+                    color={'teal'}>
+                    {pipeline.name}
+                  </Link>
+                </Td>
+                <Td>{origin.type}</Td>
+                <Td>{origin.path}</Td>
+                <Td>{destination.type}</Td>
+                <Td>{destination.path}</Td>
+              </Tr>
+            );
+          })}
         </Tbody>
       </Table>
     </TableContainer>

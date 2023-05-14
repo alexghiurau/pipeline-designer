@@ -19,7 +19,7 @@ const Home = () => {
 
         <Link as={NextLink} href='/pipelines'>
           <Button size='lg' colorScheme='teal' mt={4}>
-            Create a new pipeline
+            View pipelines
           </Button>
         </Link>
 
@@ -37,6 +37,7 @@ const Home = () => {
         <Text mt={4}>
           Found a bug? Raise an issue on{' '}
           <Link
+            color={'teal'}
             as={NextLink}
             href='https://github.com/alexghiurau/pipeline-designer/issues'>
             GitHub
