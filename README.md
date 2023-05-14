@@ -1,10 +1,10 @@
-# Pipeline Designer
+# Reactive Pipelines
 
 An application for visualising data pipelines.
 
 ## Installation
 
-Install pipeline-designer with [pnpm](https://pnpm.io/installation)
+Install reactive-pipelines with [pnpm](https://pnpm.io/installation)
 
 ```bash
   pnpm install
@@ -25,4 +25,4 @@ Then start the development server
 
 ## Demo
 
-A live demo can be accessed [here.](https://pipeline-designer-eight.vercel.app/)
+A live demo can be accessed [here.](https://reactive-pipelines-eight.vercel.app/)
