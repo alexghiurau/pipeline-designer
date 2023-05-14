@@ -3,6 +3,7 @@ import useSwr from 'swr';
 import Loading from '@/components/loading';
 import LoadPipelineError from '@/components/error/loadPipelineError';
 import type { Pipeline } from '@/interfaces';
+import { Code, Container, Text } from '@chakra-ui/react';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -18,9 +19,9 @@ export default function PipelinePage() {
   if (!data) return <LoadPipelineError />;
 
   return (
-    <>
-      <p>{data.name}</p>
-      <p>{JSON.stringify(data)}</p>
-    </>
+    <Container>
+      <Text>{data.name}</Text>
+      <Code>{JSON.stringify(data)}</Code>
+    </Container>
   );
 }
