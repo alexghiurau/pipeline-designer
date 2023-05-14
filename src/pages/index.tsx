@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <Container>
       <Box p={4}>
-        <Heading>Pipeline Designer</Heading>
+        <Heading>Reactive Pipelines</Heading>
         <Text fontSize='xl'>View and edit pipelines right in the browser.</Text>
 
         <Link as={NextLink} href='/pipelines'>
@@ -39,7 +39,7 @@ const Home = () => {
           <Link
             color={'teal'}
             as={NextLink}
-            href='https://github.com/alexghiurau/pipeline-designer/issues'>
+            href='https://github.com/alexghiurau/reactive-pipelines/issues'>
             GitHub
           </Link>
           .
