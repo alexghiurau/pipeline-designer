@@ -16,7 +16,7 @@ const Header = () => (
         color='whiteAlpha.900'
         fontSize='2xl'
         textAlign='left'>
-        Pipeline Designer
+        Reactive Pipelines
       </Link>
       <Box display='flex'>
         <Link href='/pipelines' as={NextLink} color='whiteAlpha.900'>
@@ -30,7 +30,7 @@ const Header = () => (
           Documentation
         </Link>
         <Link
-          href='https://github.com/alexghiurau/pipeline-designer/'
+          href='https://github.com/alexghiurau/reactive-pipelines/'
           as={NextLink}
           ml='1rem'
           color='whiteAlpha.900'>
