@@ -15,7 +15,7 @@ const Home = () => {
     <Container>
       <Box p={4}>
         <Heading>Reactive Pipelines</Heading>
-        <Text fontSize='xl'>View and edit pipelines right in the browser.</Text>
+        <Text fontSize='xl'>View and edit pipelines in the browser.</Text>
 
         <Link as={NextLink} href='/pipelines'>
           <Button size='lg' colorScheme='teal' mt={4}>
